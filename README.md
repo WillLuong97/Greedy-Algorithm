@@ -13,8 +13,11 @@ At every step, we can make a choice that looks best at the moment, and we get th
 
 ## Types of problem: 
 
-1/ Kruskal's Minimum Spanning Tree: we create a MST by picking the edges one by one. The Greedy choice is pick the smallest weight edge that doesn't cause a cycle in the MST constructed so far. 
+1/ Kruskal's Minimum Spanning Tree:
 
+    + What is a minimum spanning tree? 
+        - Given a connected and undirected graph, a spanning tree of that graph is a subgraph that is a tree and connects all the vertices together 
+    
 2/ Prim's Minimum Spanning Tree
 
 3/ Dikstra's shortest path
