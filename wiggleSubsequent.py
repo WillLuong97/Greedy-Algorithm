@@ -33,19 +33,38 @@ Can you do it in O(n) time?
 
 
 def wiggleLength(nums):
+	#base case: 
+	if not nums: 
+		return 0
+	# If the nums lenght is lesser than 2, then it is trivially a wiggle sequence
+	if len(nums) < 2: 
+		return len(nums)
 
-	return 0
+	return 1 + max(calculate(nums, 0, True), calculate(nums, 0, False))
 
-#helper method to check if difference is postive or not
-def isPositive(difference: int) -> bool: 
-	pass
+#Recursive helper method that takes in the array nums, the index from which we need 
+#to find the length of the longest wiggle subsequent, boolean variable isUp to tell 
+# whether we need to find a decreasing or increaseing wiggle.
+def calculate(nums, index, isUp):
+	maxLenghtCount = 0
+	for i in range(index + 1, len(nums)):
+		if (isUp and nums[i] > nums[index]) or (not isUp and nums[i] < nums[index]):
+			maxLenghtCount = max(maxLenghtCount, 1 + calculate(nums, i, not isUp))
 
-
-
+	return maxLenghtCount
 
 #main function to test and run the algorithm 
 def main():
 	print("TESTING WIGGLE SUBSEQUENCE...")
+
+	test_case_1 = [1,7,4,9,2,5]
+	test_case_2 = [1,17,5,10,13,15,10,5,16,8]
+	test_case_3 = [1,2,3,4,5,6,7,8,9]
+
+	print(wiggleLength(test_case_1))
+	print(wiggleLength(test_case_2))
+	print(wiggleLength(test_case_3))
+
 
 	print("END OF PROGRAM...")
 main()
