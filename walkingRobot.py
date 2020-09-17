@@ -40,7 +40,7 @@ def numWaterBottles(numBottle, numExchange):
         total += numBottle
 
         #find out how many bottle we can trade in and how many would remain
-        total, empty = divmod(empty + numBottle, numExchange)
+        numBottle, empty = divmod(empty + numBottle, numExchange)
     return total
 
 
