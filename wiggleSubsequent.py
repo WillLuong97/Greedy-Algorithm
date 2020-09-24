@@ -67,7 +67,7 @@ def wiggleLength_OPTIMIZED(nums):
 	if len(nums) < 2: 
 		return len(nums)
 	#variable to hold subsequent length
-	result = 0
+	result = 1
 	prev_difference = 0
 	#loop through the array from 1 to the end of the array
 	for i in range(1, len(nums)):
