@@ -32,6 +32,10 @@ Constraints:
 1 <= s.length <= 104
 s consists of lowercase English letters.
 '''
+# Algorithm: 
+#We use a stack to keep track of the unique element from the string but we also built the stack with the idea that we will squeeze the element with the smallest 
+#ascii representation to the head of the stack. 
+# as we put element into the stack, we will give priority to the element that has smaller ascii value or the value to be pop cannot be repeated in the string anymore.
 def removeDuplicateLetters(s):
     #base case: 
     if not s: 
