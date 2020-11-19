@@ -24,6 +24,7 @@ Note:
 0 <= fee < 50000.
 '''
 #Function to solve the problem: 
+#DP+Greedy approach
 def maxProfit(prices, fee):
     #base case: no stock, no buying
     if not prices:
@@ -38,6 +39,8 @@ def maxProfit(prices, fee):
         projectProfit = max(projectProfit, actualProfit - prices[i])
 
     return actualProfit
+#Time complexity: O(N), the algorithm will still need to go through the entire array to analyzes all stock prices
+#Space complexity: O(1) we just need space for "actualProfit" and  "projectProfit"
 
 #Main function to run the solution
 def main():
